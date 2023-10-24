@@ -2,7 +2,7 @@ import PerProduct from './perProduct';
 
 const ProductSection = () => {
   return (
-    <div className="mt-[10rem]">
+    <div className="mt-[10rem] flex justify-center items-center flex-col">
       <div className="flex justify-start items-center flex-col">
         <p className="text-fontColor text-[20px] font-bold font-inter my-4">
           Popular Products
@@ -16,6 +16,10 @@ const ProductSection = () => {
         </p>
       </div>
       <PerProduct />
+
+      <button className="border-2 rounded-lg border-fontColor bg-fontColor mx-4 px-8 py-4 font-inter text-white font-bold text-[18px] hover:bg-white hover:text-fontColor duration-150 dark:border-none my-10">
+        More Product
+      </button>
     </div>
   );
 };
