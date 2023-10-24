@@ -1,15 +1,17 @@
 import { MdDarkMode } from 'react-icons/md';
-import { BsFillSunFill } from 'react-icons/bs';
+import { BsFillSunFill, BsSearch } from 'react-icons/bs';
+import { AiOutlineShopping } from 'react-icons/ai';
 import themes from '../Hooks/themes';
+import { Link } from 'react-router-dom';
 
 const HomeNavbar = () => {
   const { changeTheme, mode } = themes();
   return (
     <div>
-      <div className="navbar bg-base-100">
+      <div className="navbar my-10">
         <div className="navbar-start">
           <div className="dropdown">
-            <label tabIndex={0} className="btn btn-ghost lg:hidden">
+            <label tabIndex={0} className="btn lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -27,23 +29,33 @@ const HomeNavbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 w-52"
             >
-              <li className="font-inter text-[18px] font-bold px-4 my-4">
-                Home
-              </li>
-              <li className="font-inter text-[18px] font-bold px-4 my-4">
-                About
-              </li>
-              <li className="font-inter text-[18px] font-bold px-4 my-4">
-                Services
-              </li>
-              <li className="font-inter text-[18px] font-bold px-4 my-4">
-                Blog
-              </li>
-              <li className="font-inter text-[18px] font-bold px-4 my-4">
-                Contact
-              </li>
+              <Link to="/">
+                <li className="font-inter text-[18px] font-bold px-4 my-4">
+                  Home
+                </li>
+              </Link>
+              <Link to="/about">
+                <li className="font-inter text-[18px] font-bold px-4 my-4">
+                  About
+                </li>
+              </Link>
+              <Link to="/services">
+                <li className="font-inter text-[18px] font-bold px-4 my-4 ">
+                  Services
+                </li>
+              </Link>
+              <Link to="/blog">
+                <li className="font-inter text-[18px] font-bold px-4 my-4">
+                  Blog
+                </li>
+              </Link>
+              <Link to="/contact">
+                <li className="font-inter text-[18px] font-bold px-4 my-4">
+                  Contact
+                </li>
+              </Link>
             </ul>
           </div>
           <div className="btn btn-ghost normal-case text-xl">
@@ -56,24 +68,41 @@ const HomeNavbar = () => {
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-            <li className="font-inter text-[18px] font-bold px-4">Home</li>
-            <li className="font-inter text-[18px] font-bold px-4">About</li>
-            <li className="font-inter text-[18px] font-bold px-4">Services</li>
-            <li className="font-inter text-[18px] font-bold px-4">Blog</li>
-            <li className="font-inter text-[18px] font-bold px-4">Contact</li>
+            <Link to="/">
+              <li className="font-inter text-[18px] font-bold px-4">Home</li>
+            </Link>
+            <Link to="/about">
+              <li className="font-inter text-[18px] font-bold px-4">About</li>
+            </Link>
+            <Link to="/services">
+              <li className="font-inter text-[18px] font-bold px-4">
+                Services
+              </li>
+            </Link>
+            <Link to="/blog">
+              <li className="font-inter text-[18px] font-bold px-4">Blog</li>
+            </Link>
+            <Link to="/contact">
+              <li className="font-inter text-[18px] font-bold px-4">Contact</li>
+            </Link>
           </ul>
         </div>
         <div className="navbar-end">
+          <AiOutlineShopping
+            size={40}
+            className="text-[#FF3811] cursor-pointer mx-4"
+          />
+          <BsSearch size={40} className="text-[#FF3811] cursor-pointer" />
           {mode == 'light' ? (
             <MdDarkMode
               size={50}
-              className="text-[#FF3811] cursor-pointer duration-300"
+              className="text-[#FF3811] cursor-pointer duration-300 mx-4"
               onClick={changeTheme}
             />
           ) : (
             <BsFillSunFill
               size={50}
-              className="text-[#FF3811] cursor-pointer duration-300"
+              className="text-[#FF3811] cursor-pointer duration-300 mx-4"
               onClick={changeTheme}
             />
           )}
