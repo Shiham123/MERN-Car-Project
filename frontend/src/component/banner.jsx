@@ -2,8 +2,8 @@ import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
 
 const Banner = () => {
   return (
-    <div>
-      <div className="carousel w-full">
+    <div className="mx-[1rem]">
+      <div className="carousel w-full rounded-lg overflow-y-hidden">
         <div id="slide1" className="carousel-item relative w-full h-[700px]">
           <img
             src="https://raw.githubusercontent.com/Shiham123/Img_for_All/master/car-project/banner/1.jpg"
@@ -19,6 +19,14 @@ const Banner = () => {
               There are many variations of passages of available, but <br />
               the majority have suffered alteration in some form
             </p>
+            <div className="flex justify-start items-center gap-8">
+              <button className="bg-transparent border-[1px] border-[#ffffff75] hover:bg-[#FF3811] hover:border-[#FF3811] px-[22px] py-[15px] text-white font-inter rounded-lg text-[18px] font-semibold duration-500">
+                Discover More
+              </button>
+              <button className="bg-transparent border-[1px] border-[#ffffff75] hover:bg-[#FF3811] hover:border-[#FF3811] px-[22px] py-[15px] text-white font-inter rounded-lg text-[18px] font-semibold duration-500">
+                Latest Project
+              </button>
+            </div>
           </div>
 
           <div className="absolute flex justify-between transform -translate-y-1/2 right-32 bottom-10 gap-8">
@@ -52,6 +60,14 @@ const Banner = () => {
               There are many variations of passages of available, but <br />
               the majority have suffered alteration in some form
             </p>
+            <div className="flex justify-start items-center gap-8">
+              <button className="bg-transparent border-[1px] border-[#ffffff75] hover:bg-[#FF3811] hover:border-[#FF3811] px-[22px] py-[15px] text-white font-inter rounded-lg text-[18px] font-semibold duration-500">
+                Discover More
+              </button>
+              <button className="bg-transparent border-[1px] border-[#ffffff75] hover:bg-[#FF3811] hover:border-[#FF3811] px-[22px] py-[15px] text-white font-inter rounded-lg text-[18px] font-semibold duration-500">
+                Latest Project
+              </button>
+            </div>
           </div>
 
           <div className="absolute flex justify-between transform -translate-y-1/2 right-32 bottom-10 gap-8">
@@ -86,6 +102,14 @@ const Banner = () => {
               There are many variations of passages of available, but <br />
               the majority have suffered alteration in some form
             </p>
+            <div className="flex justify-start items-center gap-8">
+              <button className="bg-transparent border-[1px] border-[#ffffff75] hover:bg-[#FF3811] hover:border-[#FF3811] px-[22px] py-[15px] text-white font-inter rounded-lg text-[18px] font-semibold duration-500">
+                Discover More
+              </button>
+              <button className="bg-transparent border-[1px] border-[#ffffff75] hover:bg-[#FF3811] hover:border-[#FF3811] px-[22px] py-[15px] text-white font-inter rounded-lg text-[18px] font-semibold duration-500">
+                Latest Project
+              </button>
+            </div>
           </div>
 
           <div className="absolute flex justify-between transform -translate-y-1/2 right-32 bottom-10 gap-8">
@@ -119,6 +143,14 @@ const Banner = () => {
               There are many variations of passages of available, but <br />
               the majority have suffered alteration in some form
             </p>
+            <div className="flex justify-start items-center gap-8">
+              <button className="bg-transparent border-[1px] border-[#ffffff75] hover:bg-[#FF3811] hover:border-[#FF3811] px-[22px] py-[15px] text-white font-inter rounded-lg text-[18px] font-semibold duration-500">
+                Discover More
+              </button>
+              <button className="bg-transparent border-[1px] border-[#ffffff75] hover:bg-[#FF3811] hover:border-[#FF3811] px-[22px] py-[15px] text-white font-inter rounded-lg text-[18px] font-semibold duration-500">
+                Latest Project
+              </button>
+            </div>
           </div>
 
           <div className="absolute flex justify-between transform -translate-y-1/2 right-32 bottom-10 gap-8">
