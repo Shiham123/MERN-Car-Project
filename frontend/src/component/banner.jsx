@@ -20,10 +20,10 @@ const Banner = () => {
               the majority have suffered alteration in some form
             </p>
             <div className="flex justify-start items-center gap-8">
-              <button className="bg-transparent border-[1px] border-[#ffffff75] hover:bg-[#FF3811] hover:border-[#FF3811] px-[22px] py-[15px] text-white font-inter rounded-lg text-[18px] font-semibold duration-500">
+              <button className="bg-transparent border-[1px] border-[#ffffff75] hover:bg-fontColor hover:border-fontColor px-[22px] py-[15px] text-white font-inter rounded-lg text-[18px] font-semibold duration-500">
                 Discover More
               </button>
-              <button className="bg-transparent border-[1px] border-[#ffffff75] hover:bg-[#FF3811] hover:border-[#FF3811] px-[22px] py-[15px] text-white font-inter rounded-lg text-[18px] font-semibold duration-500">
+              <button className="bg-transparent border-[1px] border-[#ffffff75] hover:bg-fontColor hover:border-fontColor px-[22px] py-[15px] text-white font-inter rounded-lg text-[18px] font-semibold duration-500">
                 Latest Project
               </button>
             </div>
@@ -32,13 +32,13 @@ const Banner = () => {
           <div className="absolute flex justify-between transform -translate-y-1/2 right-32 bottom-10 gap-8">
             <a
               href="#slide4"
-              className="p-[16px] rounded-full bg-[#ffffff33] outline-none hover:bg-[#FF3811] duration-300"
+              className="p-[16px] rounded-full bg-[#ffffff33] outline-none hover:bg-fontColor duration-300"
             >
               <AiOutlineArrowLeft size={30} color="#ffffff" />
             </a>
             <a
               href="#slide2"
-              className="p-[16px] rounded-full bg-[#ffffff33] outline-none hover:bg-[#FF3811] duration-300"
+              className="p-[16px] rounded-full bg-[#ffffff33] outline-none hover:bg-fontColor duration-300"
             >
               <AiOutlineArrowRight size={30} color="#ffffff" />
             </a>
@@ -61,10 +61,10 @@ const Banner = () => {
               the majority have suffered alteration in some form
             </p>
             <div className="flex justify-start items-center gap-8">
-              <button className="bg-transparent border-[1px] border-[#ffffff75] hover:bg-[#FF3811] hover:border-[#FF3811] px-[22px] py-[15px] text-white font-inter rounded-lg text-[18px] font-semibold duration-500">
+              <button className="bg-transparent border-[1px] border-[#ffffff75] hover:bg-fontColor hover:border-fontColor px-[22px] py-[15px] text-white font-inter rounded-lg text-[18px] font-semibold duration-500">
                 Discover More
               </button>
-              <button className="bg-transparent border-[1px] border-[#ffffff75] hover:bg-[#FF3811] hover:border-[#FF3811] px-[22px] py-[15px] text-white font-inter rounded-lg text-[18px] font-semibold duration-500">
+              <button className="bg-transparent border-[1px] border-[#ffffff75] hover:bg-fontColor hover:border-fontColor px-[22px] py-[15px] text-white font-inter rounded-lg text-[18px] font-semibold duration-500">
                 Latest Project
               </button>
             </div>
@@ -73,13 +73,13 @@ const Banner = () => {
           <div className="absolute flex justify-between transform -translate-y-1/2 right-32 bottom-10 gap-8">
             <a
               href="#slide1"
-              className="p-[16px] rounded-full bg-[#ffffff33] outline-none hover:bg-[#FF3811] duration-300"
+              className="p-[16px] rounded-full bg-[#ffffff33] outline-none hover:bg-fontColor duration-300"
             >
               <AiOutlineArrowLeft size={30} color="#ffffff" />
             </a>
             <a
               href="#slide3"
-              className="p-[16px] rounded-full bg-[#ffffff33] outline-none hover:bg-[#FF3811] duration-300"
+              className="p-[16px] rounded-full bg-[#ffffff33] outline-none hover:bg-fontColor duration-300"
             >
               <AiOutlineArrowRight size={30} color="#ffffff" />
             </a>
@@ -103,10 +103,10 @@ const Banner = () => {
               the majority have suffered alteration in some form
             </p>
             <div className="flex justify-start items-center gap-8">
-              <button className="bg-transparent border-[1px] border-[#ffffff75] hover:bg-[#FF3811] hover:border-[#FF3811] px-[22px] py-[15px] text-white font-inter rounded-lg text-[18px] font-semibold duration-500">
+              <button className="bg-transparent border-[1px] border-[#ffffff75] hover:bg-fontColor hover:border-fontColor px-[22px] py-[15px] text-white font-inter rounded-lg text-[18px] font-semibold duration-500">
                 Discover More
               </button>
-              <button className="bg-transparent border-[1px] border-[#ffffff75] hover:bg-[#FF3811] hover:border-[#FF3811] px-[22px] py-[15px] text-white font-inter rounded-lg text-[18px] font-semibold duration-500">
+              <button className="bg-transparent border-[1px] border-[#ffffff75] hover:bg-fontColor hover:border-fontColor px-[22px] py-[15px] text-white font-inter rounded-lg text-[18px] font-semibold duration-500">
                 Latest Project
               </button>
             </div>
@@ -115,13 +115,13 @@ const Banner = () => {
           <div className="absolute flex justify-between transform -translate-y-1/2 right-32 bottom-10 gap-8">
             <a
               href="#slide2"
-              className="p-[16px] rounded-full bg-[#ffffff33] outline-none hover:bg-[#FF3811] duration-300"
+              className="p-[16px] rounded-full bg-[#ffffff33] outline-none hover:bg-fontColor duration-300"
             >
               <AiOutlineArrowLeft size={30} color="#ffffff" />
             </a>
             <a
               href="#slide4"
-              className="p-[16px] rounded-full bg-[#ffffff33] outline-none hover:bg-[#FF3811] duration-300"
+              className="p-[16px] rounded-full bg-[#ffffff33] outline-none hover:bg-fontColor duration-300"
             >
               <AiOutlineArrowRight size={30} color="#ffffff" />
             </a>
@@ -144,10 +144,10 @@ const Banner = () => {
               the majority have suffered alteration in some form
             </p>
             <div className="flex justify-start items-center gap-8">
-              <button className="bg-transparent border-[1px] border-[#ffffff75] hover:bg-[#FF3811] hover:border-[#FF3811] px-[22px] py-[15px] text-white font-inter rounded-lg text-[18px] font-semibold duration-500">
+              <button className="bg-transparent border-[1px] border-[#ffffff75] hover:bg-fontColor hover:border-fontColor px-[22px] py-[15px] text-white font-inter rounded-lg text-[18px] font-semibold duration-500">
                 Discover More
               </button>
-              <button className="bg-transparent border-[1px] border-[#ffffff75] hover:bg-[#FF3811] hover:border-[#FF3811] px-[22px] py-[15px] text-white font-inter rounded-lg text-[18px] font-semibold duration-500">
+              <button className="bg-transparent border-[1px] border-[#ffffff75] hover:bg-fontColor hover:border-fontColor px-[22px] py-[15px] text-white font-inter rounded-lg text-[18px] font-semibold duration-500">
                 Latest Project
               </button>
             </div>
@@ -156,13 +156,13 @@ const Banner = () => {
           <div className="absolute flex justify-between transform -translate-y-1/2 right-32 bottom-10 gap-8">
             <a
               href="#slide3"
-              className="p-[16px] rounded-full bg-[#ffffff33] outline-none hover:bg-[#FF3811] duration-300"
+              className="p-[16px] rounded-full bg-[#ffffff33] outline-none hover:bg-fontColor duration-300"
             >
               <AiOutlineArrowLeft size={30} color="#ffffff" />
             </a>
             <a
               href="#slide1"
-              className="p-[16px] rounded-full bg-[#ffffff33] outline-none hover:bg-[#FF3811] duration-300"
+              className="p-[16px] rounded-full bg-[#ffffff33] outline-none hover:bg-fontColor duration-300"
             >
               <AiOutlineArrowRight size={30} color="#ffffff" />
             </a>

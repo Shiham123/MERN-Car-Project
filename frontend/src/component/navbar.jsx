@@ -90,23 +90,23 @@ const HomeNavbar = () => {
         <div className="navbar-end">
           <AiOutlineShopping
             size={40}
-            className="text-[#FF3811] cursor-pointer mx-4"
+            className="text-fontColor cursor-pointer mx-4"
           />
-          <BsSearch size={40} className="text-[#FF3811] cursor-pointer" />
+          <BsSearch size={40} className="text-fontColor cursor-pointer" />
           {mode == 'light' ? (
             <MdDarkMode
               size={50}
-              className="text-[#FF3811] cursor-pointer duration-300 mx-4"
+              className="text-fontColor cursor-pointer duration-300 mx-4"
               onClick={changeTheme}
             />
           ) : (
             <BsFillSunFill
               size={50}
-              className="text-[#FF3811] cursor-pointer duration-300 mx-4"
+              className="text-fontColor cursor-pointer duration-300 mx-4"
               onClick={changeTheme}
             />
           )}
-          <button className="border-2 rounded-lg border-[#FF3811] mx-4 px-8 py-4 font-inter text-[#FF3811] font-bold text-[18px] hover:bg-[#FF3811] hover:text-white duration-150">
+          <button className="border-2 rounded-lg border-fontColor mx-4 px-8 py-4 font-inter text-fontColor font-bold text-[18px] hover:bg-fontColor hover:text-white duration-150">
             Appointment
           </button>
         </div>

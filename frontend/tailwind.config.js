@@ -5,6 +5,9 @@ export default withMT({
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {},
+    colors: {
+      fontColor: '#FF3811',
+    },
     fontFamily: {
       inter: ['Inter', 'sans-serif'],
     },
