@@ -15,7 +15,7 @@ const AboutUs = () => {
           />
         </div>
       </div>
-      <div>
+      <div className="px-[2rem]">
         <h6 className="text-fontColor text-[20px] font-bold font-inter py-4">
           About Us
         </h6>

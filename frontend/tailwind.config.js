@@ -7,6 +7,8 @@ export default withMT({
     extend: {},
     colors: {
       fontColor: '#FF3811',
+      fontDark: '#151515',
+      fontTransparent: '#737373',
     },
     fontFamily: {
       inter: ['Inter', 'sans-serif'],
