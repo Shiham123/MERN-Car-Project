@@ -4,6 +4,7 @@ import ServiceArea from '../component/serviceArea';
 import ContactSection from '../component/contactSection';
 import ProductSection from '../component/ProductSection';
 import OurTeam from '../component/ourTeam';
+import TeamSlider from '../component/teamSlider';
 
 const HomePage = () => {
   return (
@@ -14,6 +15,7 @@ const HomePage = () => {
       <ContactSection />
       <ProductSection />
       <OurTeam />
+      <TeamSlider />
     </>
   );
 };
