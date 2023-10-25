@@ -15,60 +15,73 @@ const ChooseUs = () => {
       </div>
 
       {/*  */}
-      <div className="flex flex-row justify-center items-center">
-        <div className="border-2 border-[#E8E8E8]">
+      <div className="flex flex-row justify-center items-center gap-8 my-8">
+        <div className="border-2 border-[#E8E8E8] flex flex-col justify-center items-center w-1/6 py-4 hover:bg-fontColor duration-500 rounded-lg">
           <img
-            className="bg-fontColor rounded-full"
+            className="bg-white"
             src="https://raw.githubusercontent.com/Shiham123/Img_for_All/master/car-project/Icon/Group%2071.png"
             alt=""
           />
-          <h1>Timely Delivery</h1>
+          <h1 className="text-[#444] text-[18px] font-bold font-inter py-4">
+            Expert Team
+          </h1>
         </div>
 
         {/*  */}
-        <div>
+        <div className="border-2 border-[#E8E8E8] flex flex-col justify-center items-center w-1/6 py-4 hover:bg-fontColor duration-500 rounded-lg">
           <img
-            className="bg-white"
+            className="bg-black rounded-full"
             src="https://raw.githubusercontent.com/Shiham123/Img_for_All/master/car-project/Icon/Group%2038729.png"
             alt=""
           />
-          <h1>Timely Delivery</h1>
+          <h1 className="text-[#444] text-[18px] font-bold font-inter py-4">
+            Timely Delivery
+          </h1>
         </div>
+
         {/*  */}
-        <div>
+        <div className="border-2 border-[#E8E8E8] flex flex-col justify-center items-center w-1/6 py-4 hover:bg-fontColor duration-500 rounded-lg">
           <img
             className="bg-white"
-            src="https://raw.githubusercontent.com/Shiham123/Img_for_All/master/car-project/Icon/Group.png://raw.githubusercontent.com/Shiham123/Img_for_All/master/car-project/Icon/Group%2038730.png"
+            src="https://raw.githubusercontent.com/Shiham123/Img_for_All/master/car-project/Icon/Group.png"
             alt=""
           />
-          <h1>Timely Delivery</h1>
+          <h1 className="text-[#444] text-[18px] font-bold font-inter py-4">
+            24/7 Support
+          </h1>
         </div>
         {/*  */}
-        <div>
+        <div className="border-2 border-[#E8E8E8] flex flex-col justify-center items-center w-1/6 py-4 hover:bg-fontColor duration-500 rounded-lg">
           <img
             className="bg-white"
             src="https://raw.githubusercontent.com/Shiham123/Img_for_All/master/car-project/Icon/Wrench.png"
             alt=""
           />
-          <h1>Timely Delivery</h1>
+          <h1 className="text-[#444] text-[18px] font-bold font-inter py-4">
+            Best Equipment
+          </h1>
         </div>
         {/*  */}
-        <div>
+        <div className="border-2 border-[#E8E8E8] flex flex-col justify-center items-center w-1/6 py-4 hover:bg-fontColor duration-500 rounded-lg">
           <img
             className="bg-white"
             src="https://raw.githubusercontent.com/Shiham123/Img_for_All/master/car-project/Icon/Group%2038730.png"
             alt=""
           />
-          <h1>Timely Delivery</h1>
+          <h1 className="text-[#444] text-[18px] font-bold font-inter py-4">
+            100% Guranty
+          </h1>
         </div>
         {/*  */}
-        <div>
+        <div className="border-2 border-[#E8E8E8] flex flex-col justify-center items-center w-1/6 py-4 hover:bg-fontColor duration-500 rounded-lg">
           <img
             className="bg-white"
             src="https://raw.githubusercontent.com/Shiham123/Img_for_All/master/car-project/Icon/Group%2038731.png"
             alt=""
           />
-          <h1>Timely Delivery</h1>
+          <h1 className="text-[#444] text-[18px] font-bold font-inter py-4">
+            Timely Delivery
+          </h1>
         </div>
       </div>
     </div>
