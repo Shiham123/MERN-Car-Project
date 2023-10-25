@@ -7,6 +7,7 @@ import OurTeam from '../component/ourTeam';
 import TeamSlider from '../component/teamSlider';
 import ChooseUs from '../component/chooseUs';
 import CustomerSection from '../component/customer';
+import Footer from './footer';
 
 const HomePage = () => {
   return (
