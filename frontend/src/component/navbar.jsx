@@ -56,6 +56,11 @@ const HomeNavbar = () => {
                   Contact
                 </li>
               </Link>
+              <Link to="/Login">
+                <li className="font-inter text-[18px] font-bold px-4 my-4">
+                  Login
+                </li>
+              </Link>
             </ul>
           </div>
           <div className="btn btn-ghost normal-case text-xl">
@@ -84,6 +89,9 @@ const HomeNavbar = () => {
             </Link>
             <Link to="/contact">
               <li className="font-inter text-[18px] font-bold px-4">Contact</li>
+            </Link>
+            <Link to="/login">
+              <li className="font-inter text-[18px] font-bold px-4">Login</li>
             </Link>
           </ul>
         </div>
