@@ -40,7 +40,7 @@ const TeamSlider = () => {
               alt=""
             />
             <div>
-              <h1 className="font-inter text-[25px] font-bold text-[#444] py-4 text-center">
+              <h1 className="font-inter text-[25px] font-bold text-[#444] py-4 text-center dark:text-white">
                 Car Engine Plug
               </h1>
               <p className="text-[#737373] text-[20px] font-semibold font-inter text-center py-4">
@@ -76,7 +76,7 @@ const TeamSlider = () => {
               alt=""
             />
             <div>
-              <h1 className="font-inter text-[25px] font-bold text-[#444] py-4 text-center">
+              <h1 className="font-inter text-[25px] font-bold text-[#444] py-4 text-center dark:text-white">
                 Car Engine Plug
               </h1>
               <p className="text-[#737373] text-[20px] font-semibold font-inter text-center py-4">
@@ -112,7 +112,7 @@ const TeamSlider = () => {
               alt=""
             />
             <div>
-              <h1 className="font-inter text-[25px] font-bold text-[#444] py-4 text-center">
+              <h1 className="font-inter text-[25px] font-bold text-[#444] py-4 text-center dark:text-white">
                 Car Engine Plug
               </h1>
               <p className="text-[#737373] text-[20px] font-semibold font-inter text-center py-4">
@@ -148,7 +148,7 @@ const TeamSlider = () => {
               alt=""
             />
             <div>
-              <h1 className="font-inter text-[25px] font-bold text-[#444] py-4 text-center">
+              <h1 className="font-inter text-[25px] font-bold text-[#444] py-4 text-center dark:text-white">
                 Car Engine Plug
               </h1>
               <p className="text-[#737373] text-[20px] font-semibold font-inter text-center py-4">
@@ -184,7 +184,7 @@ const TeamSlider = () => {
               alt=""
             />
             <div>
-              <h1 className="font-inter text-[25px] font-bold text-[#444] py-4 text-center">
+              <h1 className="font-inter text-[25px] font-bold text-[#444] py-4 text-center dark:text-white">
                 Car Engine Plug
               </h1>
               <p className="text-[#737373] text-[20px] font-semibold font-inter text-center py-4">
@@ -220,7 +220,7 @@ const TeamSlider = () => {
               alt=""
             />
             <div>
-              <h1 className="font-inter text-[25px] font-bold text-[#444] py-4 text-center">
+              <h1 className="font-inter text-[25px] font-bold text-[#444] py-4 text-center dark:text-white">
                 Car Engine Plug
               </h1>
               <p className="text-[#737373] text-[20px] font-semibold font-inter text-center py-4">
