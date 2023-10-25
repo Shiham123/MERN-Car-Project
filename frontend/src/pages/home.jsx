@@ -6,6 +6,7 @@ import ProductSection from '../component/ProductSection';
 import OurTeam from '../component/ourTeam';
 import TeamSlider from '../component/teamSlider';
 import ChooseUs from '../component/chooseUs';
+import CustomerSection from '../component/customer';
 
 const HomePage = () => {
   return (
@@ -18,6 +19,7 @@ const HomePage = () => {
       <OurTeam />
       <TeamSlider />
       <ChooseUs />
+      <CustomerSection />
     </>
   );
 };
