@@ -1,11 +1,29 @@
+import { useContext } from 'react';
 import {
   AiFillFacebook,
   AiFillGithub,
   AiFillGoogleCircle,
 } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
+import { AppContext } from '../context/context';
 
 const LoginPage = () => {
+  const context = useContext(AppContext);
+  const { createUserEmailPassword } = context;
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const name = formData.get('name');
+    const email = formData.get('email');
+    const password = formData.get('password');
+    const userInfo = { name, email, password };
+
+    createUserEmailPassword(email, password)
+      .then((result) => console.log(result.user))
+      .catch((error) => console.log(error));
+  };
+
   return (
     <div className="flex flex-col lg:flex-row md:flex-row justify-center items-center gap-[10rem] my-20">
       <div>
@@ -17,7 +35,7 @@ const LoginPage = () => {
           <h1 className="text-[#444] text-[40px] font-semibold font-inter">
             Sign Up
           </h1>
-          <form action="">
+          <form action="" onSubmit={handleSubmit}>
             <div className="flex flex-col">
               <label
                 htmlFor="name"
