@@ -8,6 +8,7 @@ import ServicesPage from '../pages/services';
 import BlogPage from '../pages/blog';
 import ContactPage from '../pages/contact';
 import CardDetails from '../pages/cardDetails';
+import RegisterPage from '../pages/register';
 
 const routes = createBrowserRouter([
   {
@@ -22,6 +23,7 @@ const routes = createBrowserRouter([
       { path: '/contact', element: <ContactPage /> },
       { path: '/login', element: <LoginPage /> },
       { path: '/cardDetails/:id', element: <CardDetails /> },
+      { path: '/register', element: <RegisterPage /> },
     ],
   },
 ]);

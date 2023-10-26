@@ -5,7 +5,7 @@ import {
 } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 
-const LoginPage = () => {
+const RegisterPage = () => {
   return (
     <div className="flex flex-col lg:flex-row md:flex-row justify-center items-center gap-[10rem] my-20">
       <div>
@@ -69,35 +69,12 @@ const LoginPage = () => {
               Sign up
             </button>
           </form>
-          <p className="text-[#444] text-[18px] font-inter font-medium py-4">
-            Or Sign Up with
-          </p>
-          <div className="space-x-[3rem]">
-            <button>
-              <AiFillGoogleCircle
-                size={40}
-                className="text-fontColor hover:text-black duration-500"
-              />
-            </button>
-            <button>
-              <AiFillFacebook
-                size={40}
-                className="text-fontColor hover:text-black duration-500"
-              />
-            </button>
-            <button>
-              <AiFillGithub
-                size={40}
-                className="text-fontColor hover:text-black duration-500"
-              />
-            </button>
-          </div>
         </div>
         <p className="text-[18px] font-inter text-[#737373]">
-          Already have an account?
-          <Link to="/register">
+          Already have an account?{' '}
+          <Link to="/login">
             <span className="text-fontColor font-semibold cursor-pointer">
-              Login
+              Sign up
             </span>
           </Link>
         </p>
@@ -106,4 +83,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default RegisterPage;
