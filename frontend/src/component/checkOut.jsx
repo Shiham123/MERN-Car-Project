@@ -5,10 +5,17 @@ import { AppContext } from '../context/context';
 const CheckOut = () => {
   const { id } = useParams();
   const services = useLoaderData();
-  const { title, price } = services;
+  const { title, price, _id } = services;
 
   const context = useContext(AppContext);
-  const { user } = context;
+  const { user, logOut } = context;
+  console.log(user);
+
+  const handleLogout = () => {
+    logOut()
+      .then((result) => console.log(result))
+      .catch((error) => console.log(error));
+  };
 
   const handleCheckOutForm = (event) => {
     event.preventDefault();
@@ -17,7 +24,24 @@ const CheckOut = () => {
     const price = formData.get('price');
     const date = formData.get('date');
     const email = formData.get('email');
-    const userInfo = { title, price, date, email };
+    const orderInfo = {
+      productTitle: title,
+      productPrice: price,
+      purchaseDate: date,
+      customerEmail: email,
+      serviceId: _id,
+    };
+
+    fetch('http://localhost:5000/checkOut', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(orderInfo),
+    })
+      .then((response) => response.json())
+      .then((data) => console.log(data))
+      .catch((error) => console.log(error));
   };
 
   return (
@@ -37,6 +61,7 @@ const CheckOut = () => {
 
         <button type="submit">Submit user info</button>
       </form>
+      <button onClick={handleLogout}>Logout</button>
     </div>
   );
 };

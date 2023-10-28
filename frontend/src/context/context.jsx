@@ -4,6 +4,7 @@ import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signInWithPopup,
+  signOut,
 } from 'firebase/auth';
 import { createContext, useEffect, useState } from 'react';
 import globalAuth from '../firebase/firebase.config';
@@ -30,6 +31,10 @@ const AppProvider = ({ children }) => {
     return signInWithEmailAndPassword(globalAuth, email, password);
   };
 
+  const logOut = () => {
+    return signOut(globalAuth);
+  };
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(globalAuth, (currentUser) => {
       setUser(currentUser);
@@ -47,6 +52,7 @@ const AppProvider = ({ children }) => {
     logInUserEmailPassword,
     user,
     loading,
+    logOut,
   };
 
   return <AppContext.Provider value={info}>{children}</AppContext.Provider>;
