@@ -9,6 +9,7 @@ import BlogPage from '../pages/blog';
 import ContactPage from '../pages/contact';
 import CardDetails from '../pages/cardDetails';
 import RegisterPage from '../pages/register';
+import CheckOut from '../component/checkOut';
 
 const routes = createBrowserRouter([
   {
@@ -24,6 +25,12 @@ const routes = createBrowserRouter([
       { path: '/login', element: <LoginPage /> },
       { path: '/cardDetails/:id', element: <CardDetails /> },
       { path: '/register', element: <RegisterPage /> },
+      {
+        path: '/checkOut/:id',
+        element: <CheckOut />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/services/${params.id}`),
+      },
     ],
   },
 ]);

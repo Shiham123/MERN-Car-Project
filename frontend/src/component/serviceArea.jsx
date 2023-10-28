@@ -5,7 +5,7 @@ const ServiceArea = () => {
   const [servicesData, setServicesData] = useState([]);
 
   useEffect(() => {
-    fetch('/services.json')
+    fetch('http://localhost:5000/services')
       .then((response) => response.json())
       .then((data) => setServicesData(data))
       .catch((error) => console.log(error));

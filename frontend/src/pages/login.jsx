@@ -9,7 +9,7 @@ import { AppContext } from '../context/context';
 
 const LoginPage = () => {
   const context = useContext(AppContext);
-  const { createUserEmailPassword } = context;
+  const { createUserEmailPassword, googleSignIn } = context;
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -21,6 +21,12 @@ const LoginPage = () => {
 
     createUserEmailPassword(email, password)
       .then((result) => console.log(result.user))
+      .catch((error) => console.log(error));
+  };
+
+  const handleGoogle = () => {
+    googleSignIn()
+      .then((result) => console.log(result))
       .catch((error) => console.log(error));
   };
 
@@ -91,7 +97,7 @@ const LoginPage = () => {
             Or Sign Up with
           </p>
           <div className="space-x-[3rem]">
-            <button>
+            <button onClick={handleGoogle}>
               <AiFillGoogleCircle
                 size={40}
                 className="text-fontColor hover:text-black duration-500"
