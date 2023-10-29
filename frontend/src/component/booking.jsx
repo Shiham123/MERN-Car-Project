@@ -10,11 +10,15 @@ const BookingPage = () => {
   const url = `http://localhost:5000/checkOut?customerEmail=${user?.email}`;
 
   useEffect(() => {
-    fetch(url)
+    const requestOptions = {
+      method: 'GET',
+      credentials: 'include',
+    };
+    fetch(url, requestOptions)
       .then((response) => response.json())
       .then((data) => setEmailData(data))
       .catch((error) => console.log(error));
-  }, []);
+  }, [url]);
 
   const handleDelete = (id) => {
     fetch(`http://localhost:5000/checkOut/${id}`, {

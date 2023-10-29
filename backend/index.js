@@ -1,15 +1,20 @@
 const express = require('express');
 const cors = require('cors');
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
+
 const jwt = require('jsonwebtoken');
+const cookieParser = require('cookie-parser');
+
 require('dotenv').config();
 const app = express();
 
 const port = process.env.PORT || 5000;
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({ origin: ['http://localhost:5173'], credentials: true }));
+app.use(cookieParser());
 
+// default check
 app.get('/', (request, response) => {
   response.send('app is running');
 });
@@ -25,34 +30,56 @@ const client = new MongoClient(uri, {
   },
 });
 
+const logger = async (request, response, next) => {
+  console.log('host name', request.host, 'url', request.originalUrl);
+  next();
+};
+
+const verifyToken = async (request, response, next) => {
+  const token = request.cookies.token;
+  console.log('verify token --- ', token);
+  if (!token) {
+    return response.status(401).send({ message: 'not authorized' });
+  }
+  jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (error, decoded) => {
+    if (error) {
+      console.log(error);
+      return response.status(402).send({ message: 'not valid token' });
+    }
+    console.log('value in the decoded --- ', decoded);
+    request.user = decoded;
+    next();
+  });
+};
+
 async function run() {
   try {
-    await client.connect();
+    // await client.connect();
     // await client.db('admin').command({ ping: 1 });
 
     const carsDatabase = client.db('carsDB');
     const carsCollection = carsDatabase.collection('cars');
 
+    // second database
     const serviceDatabase = client.db('carsDB');
     const serviceCollection = serviceDatabase.collection('service');
 
-    app.post('/jwt', async (request, response) => {
+    // json web token
+    app.post('/jwt', logger, async (request, response) => {
       const user = request.body;
       console.log(user);
 
       const token = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {
-        expiresIn: '1hr',
+        expiresIn: '10h',
       });
+
       response
-        .cookie('token', token, {
-          httpOnly: true,
-          secure: false,
-          sameSite: 'none',
-        })
+        .cookie('token', token, { httpOnly: true, secure: false })
         .send({ success: true });
     });
 
-    app.get('/services', async (request, response) => {
+    // first database
+    app.get('/services', logger, async (request, response) => {
       const cursor = carsCollection.find();
       const result = await cursor.toArray();
       response.send(result);
@@ -60,7 +87,6 @@ async function run() {
 
     app.get('/services/:id', async (request, response) => {
       const id = request.params.id;
-      console.log(request.body);
       const query = { _id: new ObjectId(id) };
       const options = {
         projection: { title: 1, price: 1, id: 1, img: 1 },
@@ -71,7 +97,10 @@ async function run() {
     });
 
     // second database
-    app.get('/checkOut', async (request, response) => {
+    app.get('/checkOut', logger, verifyToken, async (request, response) => {
+      // console.log('token one', request.cookies);
+      console.log('user token', request.user);
+
       let query = {};
       if (request.query?.customerEmail) {
         query = { customerEmail: request.query.customerEmail };
@@ -90,7 +119,6 @@ async function run() {
     app.patch('/checkOut/:id', async (request, response) => {
       const id = request.params.id;
       const query = { _id: new ObjectId(id) };
-
       const updatedDoc = {
         $set: {
           status: request.body.status,
@@ -107,6 +135,7 @@ async function run() {
       response.send(result);
     });
 
+    // ensure connection
     console.log('You successfully connected to MongoDB!');
   } catch (error) {
     console.log(error);

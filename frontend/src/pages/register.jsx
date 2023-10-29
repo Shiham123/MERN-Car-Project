@@ -19,12 +19,28 @@ const RegisterPage = () => {
     logInUserEmailPassword(email, password)
       .then((result) => {
         console.log(result);
-        navigate(location?.state ? location?.state : '/');
 
         const loggedInUser = { email };
-        axios
-          .post('http://localhost:5000/jwt', loggedInUser)
-          .then((response) => console.log(response.data));
+        const url = 'http://localhost:5000/jwt';
+
+        const requestOption = {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json',
+          },
+          body: JSON.stringify(loggedInUser),
+          credentials: 'include',
+        };
+
+        fetch(url, requestOption)
+          .then((response) => response.json())
+          .then((data) => {
+            console.log(data);
+            if (data.success) {
+              navigate(location?.state ? location?.state : '/');
+            }
+          })
+          .catch((error) => console.log(error));
       })
       .catch((error) => console.log(error));
   };
