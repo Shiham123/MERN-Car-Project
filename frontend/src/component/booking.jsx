@@ -34,13 +34,42 @@ const BookingPage = () => {
       .catch((error) => console.log(error));
   };
 
+  const handleUpdate = (id) => {
+    fetch(`http://localhost:5000/checkOut/${id}`, {
+      method: 'PATCH',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({ status: 'confirm' }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        if (data.modifiedCount > 0) {
+          const remainingData = emailData.filter((item) => item._id !== id);
+          const updated = emailData.find((item) => item._id === id);
+          console.log(updated);
+          updated.status = 'confirm';
+
+          const newBooking = [updated, ...remainingData];
+          setEmailData(newBooking);
+        }
+      })
+      .catch((error) => console.log(error));
+  };
+
   return (
     <div>
       {emailData &&
         emailData.map((item) => {
           const { _id } = item;
           return (
-            <PerBooking key={_id} item={item} handleDelete={handleDelete} />
+            <PerBooking
+              key={_id}
+              item={item}
+              handleDelete={handleDelete}
+              handleUpdate={handleUpdate}
+            />
           );
         })}
     </div>

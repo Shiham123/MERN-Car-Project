@@ -87,6 +87,19 @@ async function run() {
       response.send(result);
     });
 
+    app.patch('/checkOut/:id', async (request, response) => {
+      const id = request.params.id;
+      const query = { _id: new ObjectId(id) };
+
+      const updatedDoc = {
+        $set: {
+          status: request.body.status,
+        },
+      };
+      const result = await serviceCollection.updateOne(query, updatedDoc);
+      response.send(result);
+    });
+
     app.delete('/checkOut/:id', async (request, response) => {
       const id = request.params.id;
       const query = { _id: new ObjectId(id) };
