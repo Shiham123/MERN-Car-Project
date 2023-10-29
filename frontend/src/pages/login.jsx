@@ -10,7 +10,7 @@ import { AppContext } from '../context/context';
 const LoginPage = () => {
   const context = useContext(AppContext);
   const navigate = useNavigate();
-  const { createUserEmailPassword, googleSignIn } = context;
+  const { createUserEmailPassword, googleSignIn, logOut } = context;
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -22,7 +22,12 @@ const LoginPage = () => {
 
     createUserEmailPassword(email, password)
       .then((result) => {
-        console.log(result.user);
+        console.log(result);
+
+        logOut()
+          .then((result) => console.log(result))
+          .catch((error) => console.log(error));
+
         navigate('/register');
       })
       .catch((error) => console.log(error));

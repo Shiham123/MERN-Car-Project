@@ -6,8 +6,8 @@ import axios from 'axios';
 const RegisterPage = () => {
   const context = useContext(AppContext);
   const location = useLocation();
-  console.log(location);
   const navigate = useNavigate();
+
   const { logInUserEmailPassword } = context;
 
   const handleSubmit = (event) => {

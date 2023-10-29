@@ -3,19 +3,11 @@ import { useLoaderData, useParams } from 'react-router-dom';
 import { AppContext } from '../context/context';
 
 const CheckOut = () => {
-  const { id } = useParams();
   const services = useLoaderData();
   const { title, price, _id } = services;
 
   const context = useContext(AppContext);
-  const { user, logOut } = context;
-  console.log(user);
-
-  const handleLogout = () => {
-    logOut()
-      .then((result) => console.log(result))
-      .catch((error) => console.log(error));
-  };
+  const { user } = context;
 
   const handleCheckOutForm = (event) => {
     event.preventDefault();
@@ -46,22 +38,48 @@ const CheckOut = () => {
 
   return (
     <div>
-      <form action="" onSubmit={handleCheckOutForm}>
-        <label htmlFor="title">Title : </label>
-        <input type="text" name="title" defaultValue={title} />
+      <form
+        action=""
+        onSubmit={handleCheckOutForm}
+        className="bg-[#F3F3F3] p-8"
+      >
+        <div className="flex gap-8 ">
+          <input
+            type="text"
+            name="title"
+            defaultValue={title}
+            className="outline-none border-2 border-[#e9c4c4] w-1/2 text-[#A2A2A2] font-inter p-4 rounded-lg text-[16px] leading-[30px]"
+          />
 
-        <label htmlFor="price">Price : </label>
-        <input type="number" name="price" defaultValue={price} />
+          <input
+            type="number"
+            name="price"
+            defaultValue={price}
+            className="outline-none border-2 border-[#e9c4c4] w-1/2 text-[#A2A2A2] font-inter p-4 rounded-lg text-[16px] leading-[30px]"
+          />
+        </div>
 
-        <label htmlFor="Date">Date : </label>
-        <input type="date" name="date" />
+        <div className="flex gap-8 my-4">
+          <input
+            type="date"
+            name="date"
+            className="outline-none border-2 border-[#e9c4c4] w-1/2 text-[#A2A2A2] font-inter p-4 rounded-lg text-[16px] leading-[30px]"
+          />
+          <input
+            type="email"
+            name="email"
+            defaultValue={user?.email}
+            className="outline-none border-2 border-[#e9c4c4] w-1/2 text-[#A2A2A2] font-inter p-4 rounded-lg text-[16px] leading-[30px]"
+          />
+        </div>
 
-        <label htmlFor="email">Email :</label>
-        <input type="email" name="email" defaultValue={user?.email} />
-
-        <button type="submit">Submit user info</button>
+        <button
+          type="submit"
+          className="w-full bg-fontColor border-2 border-fontColor text-white py-4 rounded-lg hover:bg-transparent hover:text-fontColor hover:border-fontColor font-inter font-bold tracking-widest text-[20px] duration-500"
+        >
+          Submit user info
+        </button>
       </form>
-      <button onClick={handleLogout}>Logout</button>
     </div>
   );
 };
