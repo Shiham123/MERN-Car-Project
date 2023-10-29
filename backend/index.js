@@ -43,7 +43,7 @@ const verifyToken = async (request, response, next) => {
   }
   jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (error, decoded) => {
     if (error) {
-      console.log(error);
+      // console.log(error);
       return response.status(402).send({ message: 'not valid token' });
     }
     console.log('value in the decoded --- ', decoded);
@@ -67,7 +67,7 @@ async function run() {
     // json web token
     app.post('/jwt', logger, async (request, response) => {
       const user = request.body;
-      console.log(user);
+      // console.log(user);
 
       const token = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {
         expiresIn: '10h',
@@ -99,7 +99,12 @@ async function run() {
     // second database
     app.get('/checkOut', logger, verifyToken, async (request, response) => {
       // console.log('token one', request.cookies);
-      console.log('user token', request.user);
+      // console.log('user token', request.user);
+      // console.log('user mail ---', request.query.customerEmail);
+
+      if (request.query.customerEmail !== request.user.email) {
+        return response.status(403).send({ message: 'forbidden' });
+      }
 
       let query = {};
       if (request.query?.customerEmail) {
