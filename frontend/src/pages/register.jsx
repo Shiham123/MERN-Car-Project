@@ -1,9 +1,13 @@
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AppContext } from '../context/context';
+import axios from 'axios';
 
 const RegisterPage = () => {
   const context = useContext(AppContext);
+  const location = useLocation();
+  console.log(location);
+  const navigate = useNavigate();
   const { logInUserEmailPassword } = context;
 
   const handleSubmit = (event) => {
@@ -13,7 +17,15 @@ const RegisterPage = () => {
     const password = formData.get('password');
 
     logInUserEmailPassword(email, password)
-      .then((result) => console.log(result.user))
+      .then((result) => {
+        console.log(result);
+        navigate(location?.state ? location?.state : '/');
+
+        const loggedInUser = { email };
+        axios
+          .post('http://localhost:5000/jwt', loggedInUser)
+          .then((response) => console.log(response.data));
+      })
       .catch((error) => console.log(error));
   };
 
@@ -40,7 +52,7 @@ const RegisterPage = () => {
                 type="text"
                 placeholder="your name"
                 name="name"
-                className="border-2 border-[#E8E8E8] font-inter px-4 py-2 mx-4 my-2 rounded-lg capitalize outline-none w-full"
+                className="border-2 border-[#E8E8E8] font-inter px-4 py-2 mx-4 my-2 rounded-lg  outline-none w-full"
               />
             </div>
 
@@ -55,7 +67,7 @@ const RegisterPage = () => {
                 type="email"
                 name="email"
                 placeholder="your email"
-                className="border-2 border-[#E8E8E8] font-inter px-4 py-2 mx-4 my-2 rounded-lg capitalize outline-none w-full"
+                className="border-2 border-[#E8E8E8] font-inter px-4 py-2 mx-4 my-2 rounded-lg  outline-none w-full"
               />
             </div>
 
@@ -70,7 +82,7 @@ const RegisterPage = () => {
                 type="password"
                 name="password"
                 placeholder="your password"
-                className="border-2 border-[#E8E8E8] font-inter px-4 py-2 mx-4 my-2 rounded-lg capitalize outline-none w-full"
+                className="border-2 border-[#E8E8E8] font-inter px-4 py-2 mx-4 my-2 rounded-lg  outline-none w-full"
               />
             </div>
             <button

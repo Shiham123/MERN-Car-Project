@@ -3,8 +3,19 @@ import { BsFillSunFill, BsSearch } from 'react-icons/bs';
 import { AiOutlineShopping } from 'react-icons/ai';
 import themes from '../Hooks/themes';
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { AppContext } from '../context/context';
 
 const HomeNavbar = () => {
+  const context = useContext(AppContext);
+  const { user, logOut } = context;
+
+  const handleLogout = () => {
+    logOut()
+      .then((result) => console.log(result))
+      .catch((error) => console.log(error));
+  };
+
   const { changeTheme, mode } = themes();
   return (
     <div>
@@ -56,11 +67,20 @@ const HomeNavbar = () => {
                   Contact
                 </li>
               </Link>
-              <Link to="/Login">
-                <li className="font-inter text-[18px] font-bold px-4 my-4">
-                  Login
+              {user ? (
+                <li
+                  onClick={handleLogout}
+                  className="cursor-pointer font-inter text-[18px] font-bold px-4"
+                >
+                  Logout
                 </li>
-              </Link>
+              ) : (
+                <Link to="/login">
+                  <li className="font-inter text-[18px] font-bold px-4">
+                    Login
+                  </li>
+                </Link>
+              )}
             </ul>
           </div>
           <div className="btn btn-ghost normal-case text-xl">
@@ -90,9 +110,18 @@ const HomeNavbar = () => {
             <Link to="/contact">
               <li className="font-inter text-[18px] font-bold px-4">Contact</li>
             </Link>
-            <Link to="/login">
-              <li className="font-inter text-[18px] font-bold px-4">Login</li>
-            </Link>
+            {user ? (
+              <li
+                onClick={handleLogout}
+                className="cursor-pointer font-inter text-[18px] font-bold px-4"
+              >
+                Logout
+              </li>
+            ) : (
+              <Link to="/login">
+                <li className="font-inter text-[18px] font-bold px-4">Login</li>
+              </Link>
+            )}
           </ul>
         </div>
         <div className="navbar-end">

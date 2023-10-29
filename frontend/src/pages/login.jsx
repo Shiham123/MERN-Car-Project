@@ -4,11 +4,12 @@ import {
   AiFillGithub,
   AiFillGoogleCircle,
 } from 'react-icons/ai';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AppContext } from '../context/context';
 
 const LoginPage = () => {
   const context = useContext(AppContext);
+  const navigate = useNavigate();
   const { createUserEmailPassword, googleSignIn } = context;
 
   const handleSubmit = (event) => {
@@ -20,13 +21,18 @@ const LoginPage = () => {
     const userInfo = { name, email, password };
 
     createUserEmailPassword(email, password)
-      .then((result) => console.log(result.user))
+      .then((result) => {
+        console.log(result.user);
+        navigate('/register');
+      })
       .catch((error) => console.log(error));
   };
 
   const handleGoogle = () => {
     googleSignIn()
-      .then((result) => console.log(result))
+      .then((result) => {
+        console.log(result);
+      })
       .catch((error) => console.log(error));
   };
 
@@ -53,7 +59,7 @@ const LoginPage = () => {
                 type="text"
                 placeholder="your name"
                 name="name"
-                className="border-2 border-[#E8E8E8] font-inter px-4 py-2 mx-4 my-2 rounded-lg capitalize outline-none w-full"
+                className="border-2 border-[#E8E8E8] font-inter px-4 py-2 mx-4 my-2 rounded-lg outline-none w-full"
               />
             </div>
 
@@ -68,7 +74,7 @@ const LoginPage = () => {
                 type="email"
                 name="email"
                 placeholder="your email"
-                className="border-2 border-[#E8E8E8] font-inter px-4 py-2 mx-4 my-2 rounded-lg capitalize outline-none w-full"
+                className="border-2 border-[#E8E8E8] font-inter px-4 py-2 mx-4 my-2 rounded-lg outline-none w-full"
               />
             </div>
 
