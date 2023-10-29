@@ -4,7 +4,8 @@ import { AppContext } from '../context/context';
 
 const CheckOut = () => {
   const services = useLoaderData();
-  const { title, price, _id } = services;
+
+  const { title, price, _id, img } = services;
 
   const context = useContext(AppContext);
   const { user } = context;
@@ -22,6 +23,7 @@ const CheckOut = () => {
       purchaseDate: date,
       customerEmail: email,
       serviceId: _id,
+      img,
     };
 
     fetch('http://localhost:5000/checkOut', {

@@ -16,12 +16,32 @@ const BookingPage = () => {
       .catch((error) => console.log(error));
   }, []);
 
+  const handleDelete = (id) => {
+    fetch(`http://localhost:5000/checkOut/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'content-type': 'application/json',
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        const remainingItem = emailData.filter(
+          (emailItem) => emailItem._id !== id
+        );
+        setEmailData(remainingItem);
+      })
+      .catch((error) => console.log(error));
+  };
+
   return (
     <div>
       {emailData &&
         emailData.map((item) => {
           const { _id } = item;
-          return <PerBooking key={_id} item={item} />;
+          return (
+            <PerBooking key={_id} item={item} handleDelete={handleDelete} />
+          );
         })}
     </div>
   );
