@@ -31,7 +31,7 @@ const client = new MongoClient(uri, {
 });
 
 const logger = async (request, response, next) => {
-  console.log('host name', request.host, 'url', request.originalUrl);
+  // console.log('host name', request.host, 'url', request.originalUrl);
   next();
 };
 
@@ -46,7 +46,7 @@ const verifyToken = async (request, response, next) => {
       // console.log(error);
       return response.status(402).send({ message: 'not valid token' });
     }
-    console.log('value in the decoded --- ', decoded);
+    // console.log('value in the decoded --- ', decoded);
     request.user = decoded;
     next();
   });
